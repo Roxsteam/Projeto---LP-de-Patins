@@ -41,6 +41,14 @@ font-size: var(--text-lg);
 line-height: 1.2;
 }
 
+a {
+text-decoration: none;
+color: inherit;
+
+/* o text-decoration signica que o texto do elemento a não terá nenhuma decoração (sublinhado, tachado...). E o color: inherit significa que o elemento a herdará a cor definida pelo seu pai (header) */
+
+
+}
 
 
 
