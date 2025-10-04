@@ -5,14 +5,27 @@ section.hero {
   padding: 2.5rem 2rem;
   margin-inline: auto;
 
-& h1 {
- max-width: 40rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+
+
+ div h1 {
+ width: 100%;
+ margin-right: 5rem;
+ font-family: "Syne", 'sans-serif';
+ font-size: 4rem;
+ font-weight: bold;
+ line-height: 1.25;
+
+
 }
 
 & h1 div {  
 display: inline-block;  
   overflow: hidden;
-  height: 3.2rem;
+  height: 5rem;
   width: min-content;  
   vertical-align: bottom;
    } 
@@ -27,15 +40,14 @@ display: inline-block;
     color: var(--snitap-leaf-mid) }
 
 
-&  h1 span {
-    display: block;
-    animation: slideUp 6s infinite ease;}
+
 
 
 .buttons {
  width: 32.812rem;
  width: 100%;
 margin-top: 3rem;
+margin-right: 10.687rem;
 display: flex;
 align-items: center;
 /* justify-content: center; */
@@ -91,99 +103,182 @@ margin-right: 0.75rem;
 
 a {
  
- transition: scale 350ms;
+ transition: scale 650ms ease;
 }
 
   a:hover {
     scale: 1.1;
   }
+div .hero-one {
+  width: 43.5rem;
+  height: 17.56rem;
+}
+
+/* patins */
+
+& > div:nth-child(2){
+  display: block;
+  width: 100%;
+  max-width: 30.5rem;
+  height: 30.5rem;
 
 
+ & .content{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  
+}
+
+& img {
+  position: absolute;
+  width: 100%;  
+}
+
+& img[src*="ellipse"] {
+
+  width: 94%;
+  top: 3%;
+  left: 3%;  
+
+  transform: translateX(200%);
+  animation: slideIn 3s 200ms ease forwards;
+}
+
+& img[src*="patins"]{
+  z-index: 1;
+
+  transform: translateX(200%);
+  animation: slideIn 3s ease forwards;
+}
+
+& img[src*="stars-1"]{
+
+  max-width: 5.5rem;
+  top:30%;
+  z-index: 0;
+  opacity: 0;
+  transform: translateX(400%);
+  animation: slideIn 2s 800ms ease both, appear 100ms 800ms both;
+}
+
+& img[src*="stars-2"]{
+  max-width: 2.5rem;
+  right: 0;
+  bottom: 35%;  
+
+  transform: translateX(400%);
+  animation: slideIn 2.2s 800ms ease forwards;
+}
   }
 
 
 
 
 
+&  h1 span {
+    display: block;
+    animation: slideUp 5s 2s infinite ease;}   
+    
+  }
 
-@keyframes slideUp {
-/* radical static */
-  0%, 22% { 
-  transform: translateY(0);
-}
+@keyframes appear {
 
-
-/*divertida in */
-23% { 
-  transform: translateY(calc(-3rem - 15px));
-}
-
-25% {
-  transform: translateY(calc(-3rem + 10px));
-}
-
-27% {
-transform: translateY(calc(-3rem - 10px));
-}
-
-29% {
-  transform: translateY(calc(-3rem + 5px));
-}
-
-/* divertida static */
-33%, 55% {
-transform: translateY(-3rem);
-}
-
-/*saudável in */
-
-56% {
-  transform: translateY(calc(-6rem - 15px));
-}
-
-58% {
-  transform: translateY(calc(-6rem + 10px));
-}
-
-60% {
-  transform: translateY(calc(-6rem - 10px));
-}
-
-62% {
-  transform: translateY(calc(-6rem + 5px));
-}
-
-/*saudável static */
-66%, 88% {
-  transform: translateY(-6rem);
-}
-
-
-/*radical in */
-
-89% {
-  transform: translateY(calc(-9rem -15px));
-}
-
-91% {
-
-  transform: translateY(calc(-9rem + 15px));
-}
-
-93% {
-  transform: translateY(calc(-9rem - 10px));
-}
-
-95% {
-
-  transform: translateY(calc(-9rem + 10px));
-}
-
-100% { 
-  transform: translateY(-9rem);
-}
+  to{
+    opacity: 1;
+  }
 }
 
 
 
+   @keyframes slideUp {
+    /* radical static */
+      0%, 22% { 
+      transform: translateY(0);
+    }
+    
+    
+    /*divertida in */
+    23% { 
+      transform: translateY(calc(-5rem - 15px));
+    }
+    
+    25% {
+      transform: translateY(calc(-5rem + 10px));
+    }
+    
+    27% {
+    transform: translateY(calc(-5rem - 10px));
+    }
+    
+    29% {
+      transform: translateY(calc(-5rem + 5px));
+    }
+    
+    /* divertida static */
+    33%, 55% {
+    transform: translateY(-5rem);
+    }
+    
+    /* saudável in */
+    
+    
+    56% {
+      transform: translateY(calc(-10rem - 15px));
+    }
+    
+    58% {
+      transform: translateY(calc(-10rem + 10px));
+    }
+    
+    60% {
+      transform: translateY(calc(-10rem - 10px));
+    }
+    
+    62% {
+      transform: translateY(calc(-10rem + 5px));
+    }
+    
+    /*saudável static */
+    66%, 88% {
+      transform: translateY(-10rem);
+    }
+    
+    
+    /*radical in */
+    
+    89% {
+      transform: translateY(calc(-15rem - 15px));
+    }
+    
+    91% {
+    
+      transform: translateY(calc(-15rem + 10px));
+    }
+    
+    93% {
+      transform: translateY(calc(-15rem - 10px));
+    }
+    
+    95% {
+    
+      transform: translateY(calc(-15rem + 5px));
+    }
+    
+    100% { 
+      transform: translateY(-15rem);
+    }
+    }
 
+    @keyframes slideIn {
+ 50% {
+
+  transform: translateX(-20px);
+ }
+
+
+  100% {
+transform: translateX(0);
+  }
+  
+}
